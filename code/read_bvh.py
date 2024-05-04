@@ -58,7 +58,7 @@ def parse_frames(bvh_filename):
    return data
 
 
-standard_bvh_file="train_data_bvh/standard.bvh"
+standard_bvh_file="../train_data_bvh/standard.bvh"
 weight_translation=0.01
 skeleton, non_end_bones=read_bvh_hierarchy.read_bvh_hierarchy(standard_bvh_file)    
 sample_data=parse_frames(standard_bvh_file)
@@ -387,30 +387,3 @@ def check_length(one_frame_train_data):
             b=p2-p1
             #print get_norm(b), get_norm(skeleton[joint]['offsets'])
     
-    
-
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

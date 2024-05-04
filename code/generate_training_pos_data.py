@@ -5,15 +5,16 @@ import os
 
 
 def generate_pos_traindata_from_bvh(src_bvh_folder, tar_traindata_folder):
-    if (os.path.exists(tar_traindata_folder)==False):
+    if not os.path.exists(tar_traindata_folder):
         os.makedirs(tar_traindata_folder)
-    bvh_dances_names=listdir(src_bvh_folder)
+    bvh_dances_names = listdir(src_bvh_folder)
     for bvh_dance_name in bvh_dances_names:
-        name_len=len(bvh_dance_name)
-        if(name_len>4):
-            if(bvh_dance_name[name_len-4: name_len]==".bvh"):
-                dance=read_bvh.get_train_data(src_bvh_folder+bvh_dance_name)
-                np.save(tar_traindata_folder+bvh_dance_name+".npy", dance)
+        name_len = len(bvh_dance_name)
+        if name_len > 4:
+            if bvh_dance_name[name_len - 4:] == ".bvh":
+                bvh_data = read_bvh.parse_frames(src_bvh_folder + bvh_dance_name)
+                euler_data = bvh_data[:, 3:]  # Assuming the first 3 columns are translation data
+                np.save(tar_traindata_folder + bvh_dance_name + ".npy", euler_data)
 
 def generate_pos_bvh_from_traindata(src_train_folder, tar_bvh_folder):
     if (os.path.exists(tar_bvh_folder)==False):
@@ -31,7 +32,11 @@ def generate_pos_bvh_from_traindata(src_train_folder, tar_bvh_folder):
 
 
 # Encode data from bvh to positional encoding
-generate_pos_traindata_from_bvh("train_data_bvh/martial/","train_data_xyz/martial/")
+# generate_pos_traindata_from_bvh("../train_data_bvh/martial/","../train_data_xyz/martial/")
+# generate_pos_traindata_from_bvh("../train_data_bvh/indian/","../train_data_xyz/indian/")
+generate_pos_traindata_from_bvh("../train_data_bvh/salsa/","../train_data_xyz/salsa/")
 
 # Decode from positional to bvh
-generate_pos_bvh_from_traindata("train_data_xyz/martial/", "test_data_xyz_bvh/martial/",)
+# generate_pos_bvh_from_traindata("../train_data_xyz/martial/", "../test_data_xyz_bvh/martial/",)
+# generate_pos_bvh_from_traindata("../train_data_xyz/indian/", "../test_data_xyz_bvh/indian/",)
+generate_pos_traindata_from_bvh("../train_data_bvh/salsa/","../train_data_xyz/salsa/")

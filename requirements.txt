@@ -1,0 +1,6 @@
+# run pip install -r requirements.txt to install all the required packages
+transforms3d
+torch
+torchvision
+torchaudio
+opencv-python

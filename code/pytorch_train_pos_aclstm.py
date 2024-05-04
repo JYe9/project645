@@ -265,9 +265,9 @@ def train(dances, frame_rate, batch, seq_len, read_weight_path, write_weight_fol
         
 
 read_weight_path = ""
-write_weight_folder = "train_weight_aclstm_martial/"
-write_bvh_motion_folder = "train_tmp_bvh_aclstm_martial/"
-dances_folder = "train_data_xyz/martial/"
+write_weight_folder = "../train_weight_aclstm_martial/"
+write_bvh_motion_folder = "../train_tmp_bvh_aclstm_martial/"
+dances_folder = "../train_data_xyz/martial/"
 dance_frame_rate=60
 batch=32
 in_frame = 171
