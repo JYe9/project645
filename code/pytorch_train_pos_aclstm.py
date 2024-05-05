@@ -269,7 +269,7 @@ read_weight_path = ""
 write_weight_folder = "../train_weight_aclstm_martial/"
 write_bvh_motion_folder = "../train_tmp_bvh_aclstm_martial/"
 dances_folder = "../train_data_xyz/martial/"
-dance_frame_rate=60
+dance_frame_rate=120
 batch=32
 in_frame = 171
 out_frame = 171
@@ -284,4 +284,6 @@ if not os.path.exists(write_bvh_motion_folder):
 dances= load_dances(dances_folder)
 
 train(dances, dance_frame_rate, batch, 100, read_weight_path, write_weight_folder,
-      write_bvh_motion_folder, in_frame, out_frame, hidden_size, total_iter=100000)
+      write_bvh_motion_folder, in_frame, out_frame, hidden_size, total_iter=10000)
+# train(dances, dance_frame_rate, batch, 100, read_weight_path, write_weight_folder,
+#       write_bvh_motion_folder, in_frame, out_frame, hidden_size, total_iter=100000)
