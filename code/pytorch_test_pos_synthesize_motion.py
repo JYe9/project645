@@ -214,9 +214,9 @@ def test(dance_batch_np, frame_rate, batch, initial_seq_len, generate_frames_num
 
         
 
-read_weight_path="train_weight_aclstm_martial/0005000.weight"
-write_bvh_motion_folder = "test_bvh_aclstm_martial/"
-dances_folder = "train_data_xyz/martial/"
+read_weight_path="../train_weight_aclstm_martial/0005000.weight"
+write_bvh_motion_folder = "../test_bvh_aclstm_martial/"
+dances_folder = "../train_data_xyz/martial/"
 dance_frame_rate = 60
 batch = 5
 initial_seq_len = 15

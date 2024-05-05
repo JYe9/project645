@@ -2,5 +2,4 @@
 transforms3d
 torch
 torchvision
-torchaudio
 opencv-python
