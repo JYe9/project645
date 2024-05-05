@@ -264,6 +264,7 @@ def train(dances, frame_rate, batch, seq_len, read_weight_path, write_weight_fol
             torch.save(model.state_dict(), path)
         
 
+# read_weight_path = "train_weight_aclstm_martial/0005000.weight"
 read_weight_path = ""
 write_weight_folder = "../train_weight_aclstm_martial/"
 write_bvh_motion_folder = "../train_tmp_bvh_aclstm_martial/"
