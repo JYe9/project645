@@ -261,7 +261,7 @@ def write_traindata_to_bvh(bvh_filename, train_data):
 
         
     write_xyz_to_bvh(xyz_motion, skeleton, non_end_bones, format_filename, bvh_filename)
-    
+
 def data_vec_to_position_dic(data, skeleton):
     data = data*100
     hip_pos=data[joint_index['hip']*3:joint_index['hip']*3+3]
